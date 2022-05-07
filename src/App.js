@@ -1,19 +1,19 @@
-import React, { useState, useEffect } from 'react';
-import { CssBaseline } from '@material-ui/core';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';      //import useState , useeffect from React
+import { CssBaseline } from '@material-ui/core';      // this is froend css framework import that help to built ui with less code 
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'; // import reater router dom that help to built single page application
 
-import { Navbar, Products, Cart, Checkout } from './components';
-import { commerce } from './lib/commerce';
+import { Navbar, Products, Cart, Checkout } from './components';  // import componets 
+import { commerce } from './lib/commerce';            // import commarce file 
 
-const App = () => {
-  const [mobileOpen, setMobileOpen] = React.useState(false);
-  const [products, setProducts] = useState([]);
+const App = () => {                                                 
+  const [mobileOpen, setMobileOpen] = React.useState(false);             // create some state for mobile, car,product,order,errormessage 
+  const [products, setProducts] = useState([]); 
   const [cart, setCart] = useState({});
   const [order, setOrder] = useState({});
   const [errorMessage, setErrorMessage] = useState('');
 
   const fetchProducts = async () => {
-    const { data } = await commerce.products.list();
+    const { data } = await commerce.products.list();    // ???
 
     setProducts(data);
   };
